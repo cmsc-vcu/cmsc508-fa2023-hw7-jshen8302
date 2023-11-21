@@ -1,7 +1,7 @@
 ---
 title: Homework 7 - Creating a resume database
-author: (your name goes here!)
-date: last-modified
+author: James Shen
+date: November 20, 2023
 format:
     html:
         theme: cosmo
@@ -14,7 +14,7 @@ format:
 
 (Please clean up any comments that I included.  This is a scaffold document.)
 
-GITHUB URL:  <your URL goes here!>
+GITHUB URL:  <https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-jshen8302>
 
 ```{python}
 #| eval: true
