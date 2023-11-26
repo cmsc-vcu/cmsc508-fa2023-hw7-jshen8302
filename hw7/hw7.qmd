@@ -1,7 +1,7 @@
 ---
 title: Homework 7 - Creating a resume database
 author: James Shen
-date: November 20, 2023
+date: November 25, 2023
 format:
     html:
         theme: cosmo
@@ -10,9 +10,7 @@ format:
         code-copy: true
 ---
 
-Hello!
-
-(Please clean up any comments that I included.  This is a scaffold document.)
+Hello
 
 GITHUB URL:  <https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-jshen8302>
 
@@ -92,59 +90,61 @@ except Exception as e:
 
 ## Overview and description
 
-(briefly describe the project and the database)
+The following database is designed to store the certifications and skills of all the employees in a company.
 
 ## Crows-foot diagram
 
-(add a description of the diagram and what the reader is seeing.)
-```
-{mermaid}
-%%| echo: false
+There are three main entities for people, roles, and skills. Then there are two additional entities called peopleskills and peopleroles that link an individual person with their associated roles and skills.
 
-
+```{mermaid}
 erDiagram
-    peopleskills }|--|{ skill : has
-    peopleskills }|--|| people : has
-    peopleroles ||--|| people : has
-    peopleroles }|--|{ role : has
+
+peopleskills }|--|{ skill : has
+peopleskills }|--|| people : has
+peopleroles ||--|| people : has
+peopleroles }|--|{ role : has
     
     
-    people{
-        int people_id
-        string first_name
-        string last_name
-        string email
-        string linkedin_url
-        string headshot_url
-        string discord_handle
-        string brief_bio
-        date date_joined
-    }
-    role {
-        int role_id
-        string name
-        int sort_priority
-    }
-    skill {
-        int skill_id
-        string name
-        string description
-        string tag
-        string url
-        string time_commitment
-    }
-    peopleskills {
-        int peopleskills_id
-        int skills_id
-        int people_id
-        date date_acquired
-    }
-    peopleroles {
-        int peopleroles_id
-        int eople_id
-        int role_id
-        date date_assigned
-    }
+people{
+    int people_id
+    string first_name
+    string last_name
+    string email
+    string linkedin_url
+    string headshot_url
+    string discord_handle
+    string brief_bio
+    date date_joined
+}
+role {
+    int role_id
+    string name
+    int sort_priority
+}
+skill {
+    int skill_id
+    string name
+    string description
+    string tag
+    string url
+    string time_commitment
+}
+peopleskills {
+    int peopleskills_id
+    int skills_id
+    int people_id
+    date date_acquired
+}
+peopleroles {
+    int peopleroles_id
+    int eople_id
+    int role_id
+    date date_assigned
+}
+
+
+
+
 ```
 
 ## Examples of data in the database
@@ -461,5 +461,5 @@ df
 
 ## Reflection
 
-(Write a paragraph expressing your thoughts, feelings, and insights about your experience with this assignment.  Pause and breath before writing - I'm trying to encourage critical thinking and self-awareness while allowing you to explore the connections between theory and practice. And yes, delete this paragraph.)
+This project provided a good introduction to using sql and being able to create our own database from scratch. I felt as it wasn't too overwhelming since we got a chance to set everything set up in HW6 and was already had some experience in regards to interacting with a database. However, this project allowed us to be able to create our own mini database from scratch which has helped me begin to visualize how I would create one for the boba tea shop that me and my partner are designing for our project. I am also feeling more confident in how me and my partner will be able to answer and display the queries that we had thought of in deliverable 4.
 
