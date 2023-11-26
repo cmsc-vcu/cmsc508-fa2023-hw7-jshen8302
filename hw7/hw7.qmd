@@ -10,7 +10,7 @@ format:
         code-copy: true
 ---
 
-(include a brief description of what is in this document)
+Hello!
 
 (Please clean up any comments that I included.  This is a scaffold document.)
 
@@ -97,19 +97,53 @@ except Exception as e:
 ## Crows-foot diagram
 
 (add a description of the diagram and what the reader is seeing.)
-
-```{mermaid}
+```
+{mermaid}
 %%| echo: false
+
+
 erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-    CUSTOMER{
-        int id
+    peopleskills }|--|{ skill : has
+    peopleskills }|--|| people : has
+    peopleroles ||--|| people : has
+    peopleroles }|--|{ role : has
+    
+    
+    people{
+        int people_id
         string first_name
         string last_name
+        string email
+        string linkedin_url
+        string headshot_url
+        string discord_handle
+        string brief_bio
+        date date_joined
     }
-    DELIVERY-ADDRESS {
-        int id
+    role {
+        int role_id
+        string name
+        int sort_priority
+    }
+    skill {
+        int skill_id
+        string name
+        string description
+        string tag
+        string url
+        string time_commitment
+    }
+    peopleskills {
+        int peopleskills_id
+        int skills_id
+        int people_id
+        date date_acquired
+    }
+    peopleroles {
+        int peopleroles_id
+        int eople_id
+        int role_id
+        date date_assigned
     }
 ```
 
@@ -278,12 +312,10 @@ df
 #| echo: false
 #| eval: true
 sql = """
-SELECT p.people_first_name, p.people_last_name
+SELECT DISTINCT p.people_first_name, p.people_last_name
 FROM people p
 JOIN peopleskills ps ON p.people_id = ps.people_id
-JOIN skills s ON ps.skills_id = s.skills_id
-WHERE s.skills_id = 6
-GROUP BY p.people_id, p.people_first_name, p.people_last_name;
+WHERE ps.skills_id = 6;
 
 """
 
@@ -304,10 +336,11 @@ df
 #| echo: false
 #| eval: true
 sql = """
-SELECT p.people_id, p.people_first_name, p.people_last_name, r.roles_name
+SELECT DISTINCT p.people_first_name, p.people_last_name
 FROM people p
-RIGHT JOIN peopleroles pr ON p.people_id = pr.people_id
-RIGHT JOIN roles r ON pr.role_id = r.roles_id;
+JOIN peopleroles pr ON p.people_id = pr.people_id
+WHERE pr.role_id = 2;
+
 
 
 

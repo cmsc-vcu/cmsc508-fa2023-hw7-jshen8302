@@ -20,6 +20,8 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS people;
 DROP TABLE IF EXISTS skills;
 DROP TABLE IF EXISTS peopleskills;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS peopleroles;
 # ... 
 SET FOREIGN_KEY_CHECKS=1;
 
@@ -88,7 +90,11 @@ insert into people (people_id,people_last_name,date_joined) values
 (3, 'Person 3', '2015-12-23'),
 (4, 'Person 4', '2016-01-28'),
 (5, 'Person 5', '2016-01-30'),
-(6, 'Person 6', '2020-06-08');
+(6, 'Person 6', '2020-06-08'),
+(7, 'Person 7', '2021-06-09'),
+(8, 'Person 8', '2021-06-10'),
+(9, 'Person 9', '2021-06-11'),
+(10, 'Person 10', '2021-06-12');
 
 select * from people;
 
