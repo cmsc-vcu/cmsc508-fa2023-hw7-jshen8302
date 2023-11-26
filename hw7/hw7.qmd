@@ -10,7 +10,7 @@ format:
         code-copy: true
 ---
 
-Hello
+The following project is my first attempt ever at creating a database from scratch by connecting to a php server and then using sql to create tables and insert data. The following document also provides some queries and their results.
 
 GITHUB URL:  <https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-jshen8302>
 
@@ -94,7 +94,7 @@ The following database is designed to store the certifications and skills of all
 
 ## Crows-foot diagram
 
-There are three main entities for people, roles, and skills. Then there are two additional entities called peopleskills and peopleroles that link an individual person with their associated roles and skills.
+There are three main entities for people, roles, and skills. Then there are two additional entities called peopleskills and peopleroles that link an individual person with their associated roles and skills. 
 
 ```{mermaid}
 erDiagram
@@ -153,7 +153,7 @@ For the people, skills, and roles tables, provide a description of each table an
 
 ### People table
 
-The *people* table contains elements that describe ... 
+The *people* table contains elements that describe an id to serve as the primary key to identify an individual person. It also contains elements for the persons first and last name. Other personal information is also stored such as the persons email, linkedin url, headshot url, discord handle, a brief bio, and the date they joined.
 
 Below is a list of data in the *people* table.
 
@@ -177,7 +177,7 @@ df
 
 ### Skills table
 
-The *skills* table contains elements that describe ... 
+The *skills* table contains elements that describe an id that serves as the primary key for the skill. Theres also a name, description, tag, url, and time commitment for each skill.
 
 Below is a list of data in the *skills* table.
 
@@ -202,7 +202,7 @@ df
 
 ### Roles table
 
-The *roles* table contains elements that describe ... 
+The *roles* table contains elements that describe a role id which serves as the primary key. Every role also has a name and a sort priority. 
 
 Below is a list of data in the *roles* table.
 
